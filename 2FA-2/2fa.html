@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/icon.png" sizes="32x32">
+    <!--Style-->
+    <link rel="stylesheet" href="css/2fa.css">
+
+    <title>2FA</title>
+</head>
+<body>        
+    <div class="col-md-1 col-sm-1 col-xs-12"></div>
+        <div class="logo text-center">
+        <img src="images/icon.png" width="48" height="54" alt="logo">
+        <h5>Enable Google Authentication</h5>
+        </div>
+        <div class="tab">
+        <button class="tablinks" id="defaultOpen" onclick="openNav(event, 'donwload')">1.Donwload Menu</button>
+        <button class="tablinks"onclick="openNav(event, 'QR')">2.Scan QR Code</button>
+        <button class="tablinks" onclick="openNav(event, 'backup')">3.Backup Key</button>
+        <button class="tablinks" onclick="openNav(event, 'enable')">4.Enable Google Authentication</button>
+
+        </div>
+
+        <div id="donwload" class="tabcontent">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Step 1</h2>
+                </div>
+                <div class="col-12">
+                    <p>Download and install the Google Authentication</p>
+                </div>
+                <div class="col-12 mt-2 text-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=es" class="downloadAppButton">
+                        <img src="images/google-play-button.jpg" alt="Download App Button" width="100px" height="31px">
+                    </a>
+                    <a href="https://itunes.apple.com/ve/app/google-authenticator/id388497605?mt=8" class="downloadAppButton">
+                        <img src="images/app-store-button.jpg" alt="Download App Button" width="100px" height="31px">
+                    </a>
+                    <hr>    
+                </div>
+                <div class="col-12 submit text-right">
+                    <button type="button" class="btn" onclick="openNav(event, 'QR')">Next Step ></button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="QR" class="tabcontent">
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <h2>Step 2</h2>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <article class="col-md-3 col-xs-12" id="qr">
+                            <img src="images/qr-code.png" alt="QR code" height="100px" width="100px">
+                            <span>Scan this QR code in the Google Authentication app</span>
+                        </article>
+                        <div id="acticle-2" class="col-md-8 col-xs-12">
+                            <span id="qr-code">Q59Z1LIS94HS8A3S</span>
+                            <p>If you are unable to scan the QR code, please enter this code manually
+                                into the
+                                app.
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-6 prev text-left">
+                                <button type="button" class="btn" onclick="openNav(event, 'donwload')">< Previous step</button>
+                        </div>
+                        <div class="col-6 submit text-right">
+                            <button type="button" class="btn" onclick="openNav(event, 'backup')">Next Step ></button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div id="backup" class="tabcontent">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Step 3</h2>
+                </div>
+                <div class="col-12">
+                    <div id="paper" class="row">
+                        <div class="col-md-3 col-xs-12 col-xl-3" id="img">
+                            <img src="images/key-on-paper.png" alt="QR code" height="200px" width="200px">
+                            <span id="key-on-paper">Q59Z1LIS94HS8A3S</span>
+                        </div>
+                        <div id="acticle-2" class="col-md-8 col-xs-12 col-xl-8 pt-2">
+                            <p>Please save this Key on paper. This Key will allow you to recover your
+                                Google Authentication in case of phone loss.</p>
+                            <p style="color:#ff5252;">Resetting yout Google Authentication requires
+                                opening a support ticket and takes at least 7 days to process.</p>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-6 prev text-left">
+                            <button type="button" class="btn" onclick="openNav(event, 'QR')">< Previous step</button>
+                        </div>
+                        <div class="col-6 submit text-right">
+                            <button type="button" class="btn" onclick="openNav(event, 'enable')">Next Step ></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="enable" class="tabcontent">
+            <div class="row">
+                <div class="col-12">
+                        <h2>Step 4</h2>
+                </div>
+                <div class="col-12 text-center pas">
+                    <label> Login Password:</label>
+                    <input type="password" name="Password" class="password">        
+                </div>
+                <div class="col-12 text-center fa" id="acticle-2">
+                    <label>Google Authentication Code:</label> 
+                    <input type="text" name="2FA-code">   
+                    <hr>
+                </div>
+                <div class="col-6 prev text-left" id="prev">
+                    <button type="button" class="btn" onclick="openNav(event, 'backup')">< Previous step</button>
+                </div>
+                <div class="col-6 submit text-right finish">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#myModal">Enable Google Authentication ></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-body text-center">
+                     <img src="images/Check.png" alt="" width="50px" height="50px"> <p>Succes</p>
+                    </div>
+                  </div>
+                  
+                </div>
+        </div>         
+    <div class="col-md-1 col-sm-1 col-xs-12"></div>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!--JavaScript -->
+    <script src="2fa.js"></script>
+</body>
+</html> 
